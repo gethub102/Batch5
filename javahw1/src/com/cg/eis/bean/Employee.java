@@ -3,6 +3,7 @@ package com.cg.eis.bean;
 public class Employee {
     final private int id;
     private String name;
+
     private double salary;
     private String designation;
     private String insuranceScheme;
