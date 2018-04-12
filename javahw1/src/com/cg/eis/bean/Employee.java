@@ -1,5 +1,7 @@
 package com.cg.eis.bean;
 
+import com.cg.eis.exception.AgeNotProper;
+
 public class Employee {
     final private int id;
     private String name;
@@ -36,7 +38,10 @@ public class Employee {
         return salary;
     }
 
-    public void setSalary(double salary) {
+    public void setSalary(double salary) throws AgeNotProper {
+        if (salary < 3000) {
+            throw new AgeNotProper("salary should not be less than 3000");
+        }
         this.salary = salary;
     }
 
