@@ -14,7 +14,7 @@ public class EmployeeAndServiceFactory {
     public static Employee createEmp() throws NameIncompleteException {
         Scanner input = new Scanner(System.in);
         System.out.println("input full name: ");
-        String name = input.next();
+        String name = input.nextLine();
         if (name.split(" ").length != 2) {
             throw new NameIncompleteException("This name should include first name and last name");
         }

@@ -43,5 +43,17 @@ public class Mok {
         for (Map.Entry<Integer, Integer> entry : map.entrySet()) {
             System.out.println(entry.getKey() + "-" + entry.getValue());
         }
+
+        Scanner scanner = new Scanner(System.in);
+        String name = scanner.nextLine();
+        System.out.println(name + "------");
+        String last = scanner.nextLine();
+        System.out.println(last + "------");
+        int n = scanner.nextInt();
+        System.out.println(n + "----- ");
+        scanner.close();
+
+
+
     }
 }
