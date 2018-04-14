@@ -13,15 +13,17 @@ public class PersonMain {
     }
 
     public static boolean checkPositiveNumber() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("input a number");
-        int number = scanner.nextInt();
-        if (number > 0) {
-            System.out.println(number + " is a positive number");
-            return true;
-        } else {
-            System.out.println(number + " is not a positive number");
-            return false;
+        try (Scanner scanner = new Scanner(System.in)) {
+            System.out.println("input a number");
+            int number = scanner.nextInt();
+            if (number > 0) {
+                System.out.println(number + " is a positive number");
+                return true;
+            } else {
+                System.out.println(number + " is not a positive number");
+                return false;
+            }
         }
+
     }
 }
