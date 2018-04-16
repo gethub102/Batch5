@@ -60,4 +60,9 @@ public class Employee {
     public void setInsuranceScheme(String insuranceScheme) {
         this.insuranceScheme = insuranceScheme;
     }
+
+    @Override
+    public String toString() {
+        return "id: " + this.getId() + " name: " + this.getName();
+    }
 }

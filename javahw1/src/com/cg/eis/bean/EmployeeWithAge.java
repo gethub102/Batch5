@@ -19,7 +19,7 @@ public class EmployeeWithAge extends Employee {
     }
 
     public void setAge(int age) throws AgeNotProper {
-        if (age > 15) throw new AgeNotProper("age should be greater than 15");
+        if (age < 15) throw new AgeNotProper("age should be greater than 15");
         this.age = age;
     }
 }

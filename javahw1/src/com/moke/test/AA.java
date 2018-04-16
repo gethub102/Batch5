@@ -10,5 +10,7 @@ public class AA {
     }
 
     private String name;
-    private void out(){};
+
+    public Object out() throws RuntimeException {return null;};
+
 }

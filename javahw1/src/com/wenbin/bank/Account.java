@@ -62,6 +62,7 @@ public class Account {
         System.out.println(this.accountHolder + "'s balance is " + this.balance);
     }
 
+    @Override
     public String toString() {
         return "account number: " + this.accountNumber + " account houlder: " + this.accountNumber + " balance: " + this.balance;
     }

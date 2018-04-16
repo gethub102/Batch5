@@ -1,0 +1,64 @@
+Explain these OOPS concepts :
+
+Polymorphism
+One type with different implications
+ Inheritance
+Sub with super class relationship. Sub class reuse the code of super class. Additionally, sub class could enhance the code alternate code. 
+ Abstraction
+Highlighting the important feature from the user's perspective without showing actual implementation
+ Encapsulation
+Protect data from unauthorized users, and use data as a unit
+ Aggregation
+Classes own relationship. One class own another. the second class is created by one class’s function. 
+ Composition
+Ownership for classes. One class own another. Life cycle is the same. 
+ Association
+Association is relation between two separate classes which establishes through their Objects. Association can be one-to-one, one-to-many, many-to-one, many-to-many.
+
+
+What is default class modifier?
+Default, accessible in same package
+ What are the different method access modifiers?
+Public protected default private
+ What is the use of a final modifier on a class?
+This class will not be inheriting 
+ What is the use of a final modifier on a method?
+Will not be override
+
+Which package is always imported by default?
+Java.lang.*
+ Can I import same package/class twice? Will the JVM load the package twice at runtime?
+Yes No
+ Does importing a package imports the sub packages as well? E.g. Does importing com.bob.* also import com.bob.code.*?
+Yes
+ What is a Java package and how is it used?
+Package is folders for code, like a module to organize code as unit. 
+ Explain the usage of Java packages.
+Like a module that could have a specific functionality. And help to prevent class name Collison. 
+ Are the imports checked for validity at compile time? 
+No
+
+Difference between Public, Private, Default and Protected ?
+Public accessible inner and outer package.
+Private accessible inner itself class
+Protected accessible inner package and inherent class of outer package
+Default accessible inner package
+  Can we reduce the visibility of the overridden method ?
+NO
+  Which access specifier can be used with Class ?
+Public default
+  Can we reduce the visibility of the inherited or overridden method ?
+No
+ What will happen if we make the constructor private ?
+By making constructor private, we prevent the class from being instantiated as well as subclassing of that class.
+  Can we instantiate the object of derived class if parent constructor is protected ?
+Yes
+  Can we declare an abstract method private ?
+No. public default or protected
+
+What is strictfp keyword and when do you use it?
+strictfp is a keyword in java used for restricting floating-point calculations and ensuring same result on every platform while performing operations in the floating-point variable.
+
+What is instanceOf operator?
+The java instanceof operator is used to test whether the object is an instance of the specified type (class or subclass or interface).
+     
