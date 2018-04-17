@@ -1,0 +1,107 @@
+What is String in Java? String is a data type?
+String is class in java. Yes
+ What are different ways to create String Object?
+String str1 = “a string”
+String str2 = new String(“another string”);
+
+How can we make String upper case or lower case?
+toUpperCase()/toLowerCase()
+ What is String subSequence method?
+str.subSequence(begin, end) returns a CharSequence which is a read only form of the string represented as a sequence of chars.
+ How to compare two Strings in java program?
+str.squals(str1)
+ How to convert String to char and vice versa?
+char[] chs = str.toCharArray()
+char c = str.charAt(index)
+Character.toString(str)
+ How to convert String to byte array and vice versa?
+ublic static String byteArrayToString(byte[] data){
+    String response = Arrays.toString(data);
+
+    String[] byteValues = response.substring(1, response.length() - 1).split(",");
+    byte[] bytes = new byte[byteValues.length];
+
+    for (int i=0, len=bytes.length; i<len; i++) {
+        bytes[i] = Byte.parseByte(byteValues[i].trim());
+    }
+
+    String str = new String(bytes);
+    return str.toLowerCase();
+}
+ Can we use String in switch case?
+Yes
+ Difference between String, StringBuffer and StringBuilder?
+String is imutable
+StringBuffer is thread safe
+StringBuilder is not thread safe
+ Why String is immutable or final in Java
+The string is Immutable in Java because String objects are cached in String pool. Since cached String literals are shared between multiple clients there is always a risk, where one client's action would affect all another client.
+ How to Split String in java?
+str.split(‘parten’)
+ Why Char array is preferred over String for storing password?
+1)Since Strings are immutable in Java if you store password as plain text it will be available in memory until Garbage collector clears it and since String are used in String pool for reusability there is pretty high chance that it will  remain in memory for long duration, which pose a security threat. Since any one who has access to memory dump can find the password in clear text and that's another reason you should always used an encrypted password than plain text. Since Strings are immutable there is no way contents of Strings can be changed because any change will produce new String, while if you char[] you can still set all his element as blank or zero. So Storing password in character array clearly mitigates security risk of stealing password.
+
+2) With plain String, you have much higher chances of accidentally printing the password to logs, monitors or some other insecure place. char[] is less vulnerable.
+ How do you check if two Strings are equal in Java?
+str1.equals(str2)
+ What is String Pool?
+the special memory region where Strings are stored by the JVM.
+ What does String intern() method do?
+When the intern() method is invoked on a String object it looks the string contained by this String object in the pool, if the string is found there then the string from the pool is returned. Otherwise, this String object is added to the pool and a reference to this String object is returned.
+String s1 = "Test";
+        String s2 = "Test";
+        String s3 = new String("Test");
+        final String s4 = s3.intern();
+
+
+I am performing lots of string concatenation and string modification in my code. which class among string, StringBuffer and StringBuilder improves the performance of my code. Remember I also want thread safe code?
+StringBuffer
+
+What is string intern?
+String Interning is a method of storing only one copy of each distinct String Value, which must be immutable.
+
+In how many ways you can create string objects in java?
+2
+
+How does substring method work in Java?
+Return new string for range of index start and end
+
+Difference between using StringTokenizer and String.split( )
+One important difference is that both String.split() and Scanner can produce empty strings but StringTokenizer never does it.
+For example:
+String str = "ab cd  ef";
+
+StringTokenizer st = new StringTokenizer(str, " ");
+for (int i = 0; st.hasMoreTokens(); i++) System.out.println("#" + i + ": " + st.nextToken());
+
+String[] split = str.split(" ");
+for (int i = 0; i < split.length; i++) System.out.println("#" + i + ": " + split[i]);
+
+Scanner sc = new Scanner(str).useDelimiter(" ");
+for (int i = 0; sc.hasNext(); i++) System.out.println("#" + i + ": " + sc.next());
+
+What is String Tokenizer and its usage?
+A StringTokenizer object internally maintains a current position within the string to be tokenized.
+System.out.println("Using Constructor 1 - ");
+        StringTokenizer st1 =
+             new StringTokenizer("Hello Geeks How are you", " ");
+        while (st1.hasMoreTokens())
+            System.out.println(st1.nextToken());
+ 
+        System.out.println("Using Constructor 2 - ");
+        StringTokenizer st2 = 
+             new StringTokenizer("JAVA : Code : String", " :");
+        while (st2.hasMoreTokens())
+            System.out.println(st2.nextToken());
+ 
+        System.out.println("Using Constructor 3 - ");
+        StringTokenizer st3 = 
+             new StringTokenizer("JAVA : Code : String", " :",  true);
+        while (st3.hasMoreTokens())
+            System.out.println(st3.nextToken());
+
+
+Methods in stringtokenizer class
+hasMoreTokens()
+nextToken()
+
