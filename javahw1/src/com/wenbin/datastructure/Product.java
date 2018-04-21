@@ -59,6 +59,13 @@ public class Product {
     }
 
     @Override
+    public int hashCode() {
+        String _price = String.valueOf(this.pprice);
+        return _price.hashCode() + this.pname.hashCode() + this.pcat.hashCode() + this.pid.hashCode();
+
+    }
+
+    @Override
     public String toString() {
         return "[id: " + this.pid + " name: " + this.pname + " cat: " + this.pcat + " price: " + this.pprice + "]";
     }

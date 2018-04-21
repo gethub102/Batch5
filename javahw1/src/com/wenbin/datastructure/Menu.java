@@ -23,6 +23,7 @@ public class Menu {
 
         try (Scanner scanner = new Scanner(System.in)) {
             String decision = scanner.nextLine();
+            System.out.println(decision);
             decision = decision.toLowerCase();
             if (decision.equals("yes") || decision.equals("y")) {
                 System.out.print("product id => ");
@@ -96,39 +97,39 @@ public class Menu {
 
     public static void main(String[] args) {
         Menu menu = new Menu();
-        Product product1 = new Product("P_id", "P_name", "P_cat", 20);
-        Product product2 = new Product("R_id", "R_name", "R_cat", 22);
-        Product product3 = new Product("T_id", "T_name", "T_cat", 23);
-        Product product4 = new Product("Y_id", "Y_name", "Y_cat", 27);
-        Product product5 = new Product("U_id", "U_name", "U_cat", 10);
-        Product product6 = new Product("I_id", "I_name", "I_cat", 90);
+//        Product product1 = new Product("P_id", "P_name", "P_cat", 20);
+//        Product product2 = new Product("R_id", "R_name", "R_cat", 22);
+//        Product product3 = new Product("T_id", "T_name", "T_cat", 23);
+//        Product product4 = new Product("Y_id", "Y_name", "Y_cat", 27);
+//        Product product5 = new Product("U_id", "U_name", "U_cat", 10);
+//        Product product6 = new Product("I_id", "I_name", "I_cat", 90);
 
         menu.addProductFromInput();
-//        menu.addProductFromInput();
+        menu.addProductFromInput();
 
         System.out.println("\n\n---- show the menu after Input added product -----");
         menu.displayAll();
-
-        menu.addProduct(product1);
-        menu.addProduct(product2);
-        menu.addProduct(product3);
-        menu.addProduct(product4);
-        menu.addProduct(product5);
-        menu.addProduct(product6);
-
-        System.out.println(" \n\n--- show the menu after added object of product --- ");
-        menu.displayAll();
-
-        System.out.println(" \n\n--- show the product with a range of price  --- ");
-        menu.showRangeMenu(20, 30);
-
-
-        System.out.println(" \n\n--- show remove a product from menu list  --- ");
-        boolean remove = menu.remove(new Product("P_id", "P_name", "P_cat", 20));
-        menu.displayAll();
-        if (remove) {
-            System.out.println("remove success");
-        }
+//
+//        menu.addProduct(product1);
+//        menu.addProduct(product2);
+//        menu.addProduct(product3);
+//        menu.addProduct(product4);
+//        menu.addProduct(product5);
+//        menu.addProduct(product6);
+//
+//        System.out.println(" \n\n--- show the menu after added object of product --- ");
+//        menu.displayAll();
+//
+//        System.out.println(" \n\n--- show the product with a range of price  --- ");
+//        menu.showRangeMenu(20, 30);
+//
+//
+//        System.out.println(" \n\n--- show remove a product from menu list  --- ");
+//        boolean remove = menu.remove(new Product("P_id", "P_name", "P_cat", 20));
+//        menu.displayAll();
+//        if (remove) {
+//            System.out.println("remove success");
+//        }
     }
 
 }
