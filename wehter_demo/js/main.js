@@ -14,7 +14,6 @@ function getWeather() {
             if (request.readyState === 4) {
                 if (request.status === 200) {
                     resolve(request.response);
-                    // console.log(request.response);
                 }
                 else {
                     reject(request.status);
