@@ -14,7 +14,7 @@ import java.sql.Statement;
  *
  *
  * */
-public class Connection {
+public class ConnectionDemo {
     public static void main(String[] args) {
         // 1. Load the driver
 
@@ -25,12 +25,14 @@ public class Connection {
         }
 
         // 2. Establish the Connection
+        java.sql.Connection  connection = null;
+        Statement stmt = null;
 
         try {
-            java.sql.Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/rjt", "root", "root");
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/rjt", "root", "root");
             // 3. Create statement
 
-            Statement stmt = connection.createStatement();
+            stmt = connection.createStatement();
 
             String query = "insert into products values(1002, 'iphoneX', 'Electronic', 999)";
 
@@ -43,6 +45,20 @@ public class Connection {
 
         } catch (SQLException e) {
             e.printStackTrace();
+        }
+
+        finally {
+            try {
+                if (stmt != null) {
+                    stmt.close();
+                }
+                if (connection != null) {
+                    connection.close();
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+
         }
 
 
