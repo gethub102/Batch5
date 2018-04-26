@@ -15,6 +15,8 @@ import java.util.List;
 
 public class ProducerAndConsumer {
 
+    Object lock = new Object();
+
     List list = new ArrayList();
     public static void main(String[] args) {
         ProducerAndConsumer pc = new ProducerAndConsumer();
@@ -24,15 +26,19 @@ public class ProducerAndConsumer {
 
     Thread producer = new Thread(() -> {
         while (true) {
-            synchronized (list) {
+            synchronized (lock) {
                 try {
-                    if (list.size() < 6) {
+                    if (list.size() >= 5) {
+                        list.notify();
+                        list.wait();
+                    }
+                    else {
                         int num = (int)(Math.random() * 1000) + 1;
                         list.add(num);
                         System.out.println("Added: " + num);
                         Thread.sleep(2000);
-                        list.wait();
-                        list.notify();
+                        lock.wait();
+                        lock.notify();
                     }
                 } catch (InterruptedException e) {
                     e.printStackTrace();
@@ -44,15 +50,16 @@ public class ProducerAndConsumer {
 
     Thread consumer = new Thread(() -> {
         while (true) {
-            synchronized (list) {
+            synchronized (lock) {
                 try {
                     if (list.size() > 0) {
                         int num = (int)list.remove(0);
                         System.out.println("Removed: " + num);
                         Thread.sleep(2000);
 
-                        list.notify();
-                        list.wait();
+                    } else {
+                        lock.notify();
+                        lock.wait();
                     }
                 } catch (InterruptedException e) {
                     e.printStackTrace();
