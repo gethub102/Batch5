@@ -1,4 +1,6 @@
-package com.rjt.training.Date;
+package com.wenbin.qa;
+
+import com.rjt.training.Date.DateCalculation;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -7,15 +9,17 @@ import java.time.ZonedDateTime;
 import java.util.Scanner;
 import java.util.TimeZone;
 
-public class DateCalculation {
+public class RepeatScanner {
     public static void main(String[] args) {
         DateCalculation dateCalculation = new DateCalculation();
-//        dateCalculation.durationForDateAndToday(); // works well
+
+        dateCalculation.getExpireDate();
+
 
 //        dateCalculation.durationForTwoDates(); //works well
-        dateCalculation.getExpireDate();
-//        dateCalculation.testGetWarrantedPeriod(); // works good
-//        dateCalculation.testTimeZoneFunction();
+//        dateCalculation.durationForDateAndToday(); // works well
+//        dateCalculation.testGetWarrantedPeriod(); // works well
+//        dateCalculation.testTimeZoneFunction(); // works well
     }
 
     private void testTimeZoneFunction() {
@@ -202,5 +206,4 @@ public class DateCalculation {
         System.out.println(zoneNow);
         // Prints current time of given zone with zone information : 2016-04-28T15:41:17.627+02:00[Europe/Madrid]
     }
-
 }

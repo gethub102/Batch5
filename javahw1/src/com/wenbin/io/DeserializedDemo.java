@@ -2,7 +2,6 @@ package com.wenbin.io;
 
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.io.ObjectInput;
 import java.io.ObjectInputStream;
 
 public class DeserializedDemo {

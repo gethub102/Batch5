@@ -22,7 +22,7 @@ public class TestThread {
 
         Thread t2 = new Thread(() -> {
             for (int i = 50; i < 100; i++) {
-                testThread.addII(i);
+                testThread.add(i);
             }
         });
 
@@ -54,13 +54,13 @@ public class TestThread {
 
     }
 
-    public void addII(int i) {
-        synchronized (list) {
-
-            list.add(i);
-        }
-
-    }
+//    public void addII(int i) {
+//        synchronized (list) {
+//
+//            list.add(i);
+//        }
+//
+//    }
 
 
 
@@ -84,7 +84,7 @@ public class TestThread {
 
 
     /**
-     * Lock
+     * Lock with immutable
      *
      * */
 //    Object key = new Object();
@@ -97,7 +97,10 @@ public class TestThread {
 //
 //    }
 
-
+    /**
+     * sync method
+     *
+     * */
 //    public synchronized void add(int i) {
 //            list.add(i);
 //    }
