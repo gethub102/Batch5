@@ -7,8 +7,8 @@ $(document).ready(function(){
     $("button").click(function(){
         $.post("http://www.rjtmobile.com/realestate/register.php?property&add",
         {
-          PropertyName: "Wenbin Li",
-          PropertyName: "name"
+          property_name: "Wenbin Li",
+          property_name: "name"
         },
         function(data,status){
             alert("Data: " + data + "\nStatus: " + status);

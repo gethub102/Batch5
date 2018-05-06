@@ -98,6 +98,7 @@ app/**/*.js
 app/**/*.js.map
 npm-debug.log*
 .DS_store
+package-lock.json 
 
 ### README.md refer
 subRD.md

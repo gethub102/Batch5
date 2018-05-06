@@ -1,7 +1,9 @@
 package com.wenbin.stream;
 
 import java.util.*;
+import java.util.concurrent.ThreadLocalRandom;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 public class StreamDataStructure {
@@ -18,7 +20,8 @@ public class StreamDataStructure {
 
         List<ProductII> list1 = Arrays.asList(productII1, productII2, productII3, productII4, productII5);
 
-//        list1.stream().mapToDouble(o -> o.price).max().isPresent(System.out::println);
+        // why it is wrong
+        list1.stream().mapToDouble(o -> o.price).max().ifPresent(System.out::println);
 
         Stream.of(1,2 ,3,4 ,5 ).mapToDouble(o -> (double)o).max().ifPresent(System.out::println);
 
@@ -27,6 +30,18 @@ public class StreamDataStructure {
         Map<Integer, ProductII> map = list1.stream().collect(Collectors.toMap(ProductII::getId, o -> o));
         System.out.println(map);
 
+        IntStream.generate(() -> ThreadLocalRandom.current().nextInt(10)).limit(5).forEach(o-> System.out.print(o + " "));
+        System.out.println("\n" + IntStream.iterate(1, x -> ++x).limit(5).sum());
+
+        System.out.println();
+        System.out.println(Stream.of(1,2,3,4,5).filter(o -> o % 2 == 0).peek(System.out::println));
+
+        Integer[][] intarr = {{1,2},{3,4},{5,6}};    // why it must be a obj rather than int
+        Arrays.stream(intarr).flatMap(row -> Arrays.stream(row)).forEach(System.out::print);
+        System.out.println();
+
+        Arrays.stream(intarr).flatMap(o -> Arrays.stream(o)).skip(1).forEach(System.out::print);
+        System.out.println();
 
     }
 }
